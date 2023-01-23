@@ -75,7 +75,7 @@ jobs:
           author_email: "ersilia-bot@users.noreply.github.com"
           message: "updating readme [skip ci]"
           repository: "ersilia-os/${{ github.event.repository.name }}"
-          github_token: ${{ GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           amend: true
           force: true
       
