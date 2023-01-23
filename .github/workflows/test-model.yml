@@ -50,12 +50,6 @@ jobs:
           python3 update_metadata_to_airtable.py $USER_NAME $REPO_NAME $BRANCH $AIRTABLE_API_KEY
           rm update_metadata_to_airtable.py
 
-      - name: checkout persist credentials
-        uses: actions/checkout@master
-        with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-
       - name: Update README file
         id: update-readme-file
         env:
@@ -68,7 +62,7 @@ jobs:
           rm update_readme_from_airtable.py
           less README.md
 
-      - name: commit and push changes
+      - name: Commit and push changes done to the README file
         uses: actions-js/push@master
         with:
           author_name: "ersilia-bot"
