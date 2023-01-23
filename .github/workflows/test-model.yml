@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # pin@v3.2
       
+      - name: Print files
+        run: ls
+      
       - name: Add conda to system path
         run: echo $CONDA/bin >> $GITHUB_PATH
       
